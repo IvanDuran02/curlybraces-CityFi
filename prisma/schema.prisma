@@ -7,20 +7,22 @@ generator client {
 }
 
 datasource db {
-  provider             = "mysql"
-  url                  = env("DATABASE_URL")
-  referentialIntegrity = "prisma"
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  status      String
+  latiture    Float
+  longiture   Float
+  category    String
+  subCategory String
+  description String?
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
 
   @@index(authorId)
 }
