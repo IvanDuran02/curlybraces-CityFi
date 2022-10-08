@@ -1,13 +1,13 @@
-import MainNav from '../components/MainNav'
-import '../styles/globals.css'
+import MainNav from "../components/MainNav";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>  <Component {...pageProps} />
-  <MainNav />
-  </>
-
-  )
+    <>
+      <Component {...pageProps} />
+      <MainNav />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

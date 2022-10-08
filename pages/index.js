@@ -61,11 +61,8 @@ function HomePage() {
   });
   return (
     <div className="h-[100vh] w-screen flex flex-col justify-center items-center">
-
-      <div id="map" ref={googlemap} className="w-screen h-5/6" />
-      
+      <div id="map" ref={googlemap} />
     </div>
-
   );
 }
 
