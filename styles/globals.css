@@ -19,19 +19,24 @@ body {
 }
 
 #map {
-
   height: 80%;
-  width: 100%
-
+  width: 100%;
 }
 #__next {
   height: 100%;
 }
 
+/* Report Button */
 
 .report-button {
   color: var(--red);
   z-index: 1;
+}
+
+/* Top Reports */
+
+.toggle-reports {
+  margin-left: 38%;
 }
 
 .top-reports-toggle {
@@ -40,3 +45,10 @@ body {
   align-items: flex-end;
 }
 
+.top-report-section {
+  margin-left: -3rem;
+}
+
+.top-report-card-link {
+  color: var(--navy);
+}
