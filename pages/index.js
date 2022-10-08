@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import AddReportButton from "../components/AddReportButton";
+import TopReportsToggle from "../components/TopReportsToggle";
+import Test from "./test";
 
 function HomePage() {
   const googlemap = useRef(null);
@@ -60,9 +63,10 @@ function HomePage() {
     navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
   });
   return (
-    <div className="h-[100vh] w-screen flex flex-col justify-center items-center">
-      <h1>Hello, world</h1>
-      <div id="map" ref={googlemap} className="w-[50%]" />
+    <div className="h-[100vh] w-screen flex flex-col justify- items-center">
+      <AddReportButton />
+      <div id="map" ref={googlemap} className="w-[100%]" />
+      <TopReportsToggle />
     </div>
   );
 }
