@@ -4,8 +4,8 @@ import { Loader } from "@googlemaps/js-api-loader";
 function HomePage() {
   const googlemap = useRef(null);
 
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState(0.0);
+  const [lng, setLng] = useState(0.0);
 
   useEffect(() => {
     const loader = new Loader({
@@ -41,12 +41,12 @@ function HomePage() {
     const locationSuccess = (position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      const altitude = position.coords.altitude;
-      const accuracy = position.coords.accuracy;
-      const altitudeAccuracy = position.coords.altitudeAccuracy;
-      const heading = position.coords.height;
-      const speed = position.coords.speed;
-      const timestamp = position.timestamp;
+      // const altitude = position.coords.altitude;
+      // const accuracy = position.coords.accuracy;
+      // const altitudeAccuracy = position.coords.altitudeAccuracy;
+      // const heading = position.coords.height;
+      // const speed = position.coords.speed;
+      // const timestamp = position.timestamp;
 
       setLat(latitude);
       setLng(longitude);
