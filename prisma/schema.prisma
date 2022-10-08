@@ -16,8 +16,8 @@ model Post {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   status      String
-  latiture    Float
-  longiture   Float
+  latitude    Float
+  longitude   Float
   category    String
   subCategory String
   description String?
