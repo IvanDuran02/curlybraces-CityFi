@@ -27,4 +27,11 @@ body {
 
 .report-button {
   color: var(--red);
+  z-index: 1;
+}
+
+.top-reports-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }

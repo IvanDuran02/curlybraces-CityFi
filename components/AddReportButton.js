@@ -1,4 +1,4 @@
-function MapActions() {
+function AddReportButton() {
   return (
     <div>
       <div className="report-button absolute top-5 right-5">
@@ -23,4 +23,4 @@ function MapActions() {
   );
 }
 
-export default MapActions;
+export default AddReportButton;
