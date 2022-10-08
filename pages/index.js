@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import MainNav from "../components/MainNav"
 
 function HomePage() {
   const googlemap = useRef(null);
@@ -63,7 +64,9 @@ function HomePage() {
     <div className="h-[100vh] w-screen flex flex-col justify-center items-center">
       <h1>Hello, world</h1>
       <div id="map" ref={googlemap} className="w-[50%]" />
+      <MainNav/>
     </div>
+
   );
 }
 
