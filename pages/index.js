@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import MapActions from "../components/MapActions";
+import Test from "./test";
 
 function HomePage() {
   const googlemap = useRef(null);
@@ -22,7 +24,13 @@ function HomePage() {
       });
     });
   });
-  return <div id="map" ref={googlemap} />;
+  return (
+    <div>
+      {/* <MapActions /> */}
+
+      <div id="map" ref={googlemap} className="h-screen" />
+    </div>
+  );
 }
 
 export default HomePage;

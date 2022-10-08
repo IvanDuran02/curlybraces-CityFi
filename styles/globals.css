@@ -1,7 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./typography.css');
+@import url("./typography.css");
+
+:root {
+  --darkblue: #3b3554;
+  --navy: #187ba1;
+  --limegreen: #2ad876;
+  --orange: #ff9900;
+  --red: #e21717e5;
+}
 
 html,
 body {
@@ -15,4 +23,8 @@ body {
 }
 #__next {
   height: 100%;
+}
+
+.report-button {
+  color: var(--red);
 }
