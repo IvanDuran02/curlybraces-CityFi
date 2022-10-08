@@ -19,12 +19,15 @@ body {
 }
 
 #map {
+
   height: 80%;
   width: 100%
+
 }
 #__next {
   height: 100%;
 }
+
 
 .report-button {
   color: var(--red);
@@ -36,3 +39,4 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
 }
+
