@@ -4,7 +4,7 @@ function MainNav() {
     return (
       <div>
         {/*Navigation bar*/}
-        <nav className="isolate fixed bottom-0 flex space-x-2 text-3xl">
+        <nav className="flex justify-around space-x-2 text-2xl pb-2">
                 <ul>
                     <li>
                         <Link href='#'>Summaries</Link>
