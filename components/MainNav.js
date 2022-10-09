@@ -21,7 +21,6 @@ function MainNav() {
               </div>
 
               <h2 className="m-2">Reports</h2>
-
             </div>
           </Link>
           <Link href="#">
@@ -31,7 +30,6 @@ function MainNav() {
               </div>
 
               <h2 className="m-2">Account</h2>
-
             </div>
           </Link>
         </div>
