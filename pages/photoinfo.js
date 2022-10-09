@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const photoinfo = () => {
@@ -91,13 +92,13 @@ const photoinfo = () => {
 
 
     </div>
+    <Link href='/'>
     <div>
-    <button type="button" className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2">Submit Photo</button>
-
-    
-    
-   
+    <button type="button" className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2"
+    onClick={()=>{ alert('Thanks for the Pic!'); }}>Submit Photo</button>
     </div>
+    </Link>
+    
     </div>
   );
 };
