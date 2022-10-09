@@ -3,12 +3,13 @@ import { Loader } from "@googlemaps/js-api-loader";
 import AddReportButton from "../components/AddReportButton";
 import TopReportsToggle from "../components/TopReportsToggle";
 import Test from "./test";
+import MainNav from "../components/MainNav";
 
 function HomePage() {
   const googlemap = useRef(null);
 
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState(0.00);
+  const [lng, setLng] = useState(0.00);
 
   useEffect(() => {
     const loader = new Loader({
@@ -66,7 +67,8 @@ function HomePage() {
     <div className="h-[100vh] w-screen flex flex-col justify- items-center">
       <AddReportButton />
       <div id="map" ref={googlemap} className="w-[100%]" />
-      <TopReportsToggle />
+      <TopReportsToggle /> 
+      <MainNav />
     </div>
 
   );

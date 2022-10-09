@@ -21,7 +21,7 @@ const photoinfo = () => {
         </ul>
     </div>
 
-    <
+    
 
 
 
