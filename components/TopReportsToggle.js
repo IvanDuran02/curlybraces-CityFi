@@ -2,11 +2,10 @@ function TopReportsToggle() {
   return (
     <div className="top-reports-toggle">
       <div className="flex flex-col">
-
         <div className="flex justify-center w-screen">
-        <button className="mt-4 h-2 w-2/5 rounded-xl p-1 bg-[lightgrey]"></button>
+          <button className="mt-4 h-2 w-2/5 rounded-xl p-1 bg-[lightgrey]"></button>
         </div>
-        <div className="m-4 grid grid-cols-1 gap-4 md:grid-cols-2">  
+        <div className="m-4 grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="grid grid-cols-3 items-start rounded-xl bg-white p-4 shadow-lg">
             <div className="flex h-12 w-15 items-center justify-center">
               <img src="/images/hazard-icon.svg"></img>
