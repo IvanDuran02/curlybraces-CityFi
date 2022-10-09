@@ -2,14 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import AddReportButton from "../components/AddReportButton";
 import TopReportsToggle from "../components/TopReportsToggle";
-import Test from "./test";
 import MainNav from "../components/MainNav";
+import Link from "next/link";
 
 function HomePage() {
   const googlemap = useRef(null);
 
   const [lat, setLat] = useState(0.0);
   const [lng, setLng] = useState(0.0);
+
+  const [loggedIn, setLoggedIn] = useState();
+
 
   useEffect(() => {
     const loader = new Loader({
@@ -64,12 +67,61 @@ function HomePage() {
     navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
   });
   return (
-    <div className="h-[100vh] w-screen flex flex-col justify- items-center">
-      <AddReportButton />
-      <div id="map" ref={googlemap} className="w-[100%]" />
-      <TopReportsToggle />
-      <MainNav />
-    </div>
+    <>
+      <div id="map" ref={googlemap} className="w-[100%] hidden" />
+      {loggedIn ? (
+        <div className="h-[100vh] w-screen flex flex-col justify- items-center">
+          <AddReportButton />
+          <div id="map" ref={googlemap} className="w-[100%]" />
+          <TopReportsToggle />
+          <MainNav />
+        </div>
+      ) : (
+        <div className="overflow-hidden">
+          <div className="flex justify-center w-screen">
+            <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
+            <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
+          </div>
+          <div className="flex justify-center mt-20">
+            <img src="/images/cityfi-icon.png" alt="cityfi icon" />
+          </div>
+          <div className="flex justify-center mt-16">
+            <p className="font-mono font-bold text-5xl">Cityfi</p>
+          </div>
+          <div className="flex mt-14 justify-center">
+            <p className="font-mono text-2xl text-center p-4">
+              Helping connect the community and <br /> the local goverment
+            </p>
+          </div>
+
+          <div className="flex space-x-8 w-screen justify-center">
+            <div className="flex justify-center mt-16">
+              <button
+                onClick={() => setLoggedIn(true)}
+                type="button"
+                className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2"
+              >
+                Sign In
+              </button>
+            </div>
+            <Link href="/create">
+              <div className="flex justify-center mt-16">
+                <button
+                  type="button"
+                  className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2"
+                >
+                  Sign up
+                </button>
+              </div>
+            </Link>
+          </div>
+
+          <div className="w-36 h-36 rounded-full bg-[#680E0E] absolute top-10 -left-20 opacity-80" />
+          <div className="w-36 h-36 rounded-full bg-[#2AD876] absolute -left-20 opacity-80" />
+          <div className="w-14 h-28 rounded-tl-full rounded-bl-full bg-[#187BA1] absolute top-52 left-[21rem] opacity-80" />
+        </div>
+      )}
+    </>
   );
 }
 
