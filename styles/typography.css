@@ -2,5 +2,5 @@
   @apply text-2xl font-bold
 }
 .icon_wrapper {
-  @apply w-1/3 p-4 flex justify-center items-center text-center flex-col mt-5
+  @apply w-1/3 flex justify-center items-center text-center flex-col mt-6
 }
