@@ -11,7 +11,7 @@ function Report() {
       </div>
       <MainNav />
     </div>
-  )
+  );
 }
 
-export default Report
+export default Report;
