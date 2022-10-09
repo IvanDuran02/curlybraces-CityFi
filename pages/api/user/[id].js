@@ -1,8 +1,9 @@
 import prisma from '../../../prisma/client'
 
 //GET api/user/[id]
+//DELETE api/user/[id]
 export default async function handler(req, res) {
-    const { id} = req.query
+    const { id } = req.query
     
     try {
         if(req.method === 'GET'){
@@ -12,8 +13,28 @@ export default async function handler(req, res) {
                 }
             })
             res.status(200).json(result)
+
+        //deleting a user by id
+        } else if(req.method === 'DELETE'){
+            //if you delete a user, you must delete their posts too
+            const deletePosts = prisma.report.deleteMany({
+                where: {
+                    authorId: Number(id)
+                        }
+                })
+            //deletes a user by id
+            const deleteUser = await prisma.user.delete({
+                where: {
+                    id: Number(id)
+                }
+            })
+
+            const transaction = await prisma.$transaction([deletePosts, deleteUser])
+            console.log(deleteUser)
+            res.status(202).json(`user id #${result.id} has been successfully deleted`)
         }
     } catch (err){
-        res.status(405).json({err})
+        console.log(err)
+        //res.status(405).json({err})
     }
 }
