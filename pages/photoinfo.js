@@ -1,7 +1,8 @@
 import React from "react";
 
 const photoinfo = () => {
-  return (
+   let selectedCategory = 0
+   return (
     <div className="flex flex-col justify-start items-center">
       <div className="py-2 px-2">
         <img
@@ -72,11 +73,11 @@ const photoinfo = () => {
     <div>
     <div className="flex justify-center p-3">
   <div className="mb-3 xl:w-96">
-    <select className="form-select appearance-none
+    <select  defaultValue={selectedCategory} className="form-select appearance-none
       block
       w-full
-      px-3
-      py-1.5
+      px-[100px]
+      py-2.5
       text-base
       font-normal
       text-gray-700
@@ -87,11 +88,11 @@ const photoinfo = () => {
       ease-in-out
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-        <option select>Categories 
-</option>
+        <option value="0" className="categories" >Categories</option> 
+
         <option value="1">Hazards</option>
         <option value="2">Residential</option>
-        <option value="3">Stree</option>
+        <option value="3">Street</option>
     </select>
   </div>
 </div>
