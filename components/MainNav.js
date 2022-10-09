@@ -5,21 +5,23 @@ function MainNav() {
     <div className="flex flex-col bottom-0">
       {/*Navigation bar*/}
       <nav>
-        <div className="flex justify-around items-center w-screen h-[15vh]">
+        <div className="flex justify-around items-center w-screen h-[10vh] pb-2">
           <Link href="#">
             <div className="icon_wrapper">
               <div>
                 <img className="w-10 h-10" src="/images/issues.png" />
               </div>
-              <h2 className="">Summaries</h2>
+              <h2 className="m-2">Summaries</h2>
             </div>
           </Link>
-          <Link href="../report.js">
+          <Link href="/photoinfo">
             <div className="icon_wrapper">
               <div>
                 <img className="w-10 h-10" src="/images/report.png" />
               </div>
-              <h2 className="">Reports</h2>
+
+              <h2 className="m-2">Reports</h2>
+
             </div>
           </Link>
           <Link href="#">
@@ -27,7 +29,9 @@ function MainNav() {
               <div>
                 <img className="w-10 h-10" src="/images/account.png" />
               </div>
-              <h2 className="">Account</h2>
+
+              <h2 className="m-2">Account</h2>
+
             </div>
           </Link>
         </div>
