@@ -1,6 +1,6 @@
 import prisma from '../../../prisma/client'
 
-//POST api/create-report
+//POST api/user/create-report
 export default async function handler(req, res) {
     const { id, name, email, role, posts} = req.body
     

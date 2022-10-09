@@ -1,6 +1,6 @@
 import prisma from '../../../prisma/client'
 
-//POST api/create-report
+//POST api/report/create-report
 export default async function handler(req, res) {
     console.log(req.body)
     const { 
