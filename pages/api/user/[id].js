@@ -2,6 +2,7 @@ import prisma from '../../../prisma/client'
 
 //GET api/user/[id]
 //DELETE api/user/[id]
+//UPDATE api/user/[id]
 export default async function handler(req, res) {
     const { id } = req.query
     
