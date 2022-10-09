@@ -14,7 +14,7 @@ function MainNav() {
               <h2 className="m-3">Summaries</h2>
             </div>
           </Link>
-          <Link href="../report.js">
+          <Link href="/photoinfo">
             <div className="icon_wrapper">
               <div>
                 <img className="w-10 h-10" src="/images/report.png" />
