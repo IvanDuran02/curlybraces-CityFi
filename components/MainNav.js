@@ -19,7 +19,9 @@ function MainNav() {
               <div>
                 <img className="w-10 h-10" src="/images/report.png" />
               </div>
+
               <h2 className="m-2">Reports</h2>
+
             </div>
           </Link>
           <Link href="#">
@@ -27,7 +29,9 @@ function MainNav() {
               <div>
                 <img className="w-10 h-10" src="/images/account.png" />
               </div>
+
               <h2 className="m-2">Account</h2>
+
             </div>
           </Link>
         </div>
