@@ -5,7 +5,6 @@ import prisma from '../../../prisma/client'
 //UPDATE api/report/[id]
 export default async function handler(req, res) {
         const { id } = req.query
-    
         try {
             if(req.method === 'GET'){
                 const result = await prisma.report.findUnique({
@@ -14,35 +13,33 @@ export default async function handler(req, res) {
                     }
                 })
                 res.status(200).json(result)
-            } else if(req.method === 'DELETE'){
+            } 
+            if(req.method === 'DELETE'){
                 const deletedReport = await prisma.report.delete({
                     where: {
                         id: Number(id)
                     }
                 })
                 res.status(202).json(`report id #${deletedReport.id} has been successfully deleted`)
-            } else if(req.method === 'PUT'){
+            } 
+            if(req.method === 'PUT'){
                 const updatedReport = await prisma.report.updateMany({
                     //update
                     where: {
-                        id: {
-                            contains: Number(id)
-                        },
+                        id: Number(id)
                     },
                     data: {
-                        status: updatedReport.status,
-                        latitude: updatedReport.latitude,
-                        longitude: updatedReport.longitude,
-                        category: updatedReport.category,
-                        subCategory: updatedReport.category,
+                        status: "resolved",
+                        //category: updatedReport.category,
+                        subCategory: updatedReport.subCategory,
                         description: updatedReport.description
                     }
                 })
-                console.log(updatedReport.id)
-                // res.status(202).json({
-                //     updatedReport,
-                //     message: `report # ${updatedReport.id} has been updated!`
-                // })
+                console.log(updatedReport)
+                res.status(202).json({
+                    //updatedReport,
+                    message: `report # ${updatedReport.id} has been updated!`
+                })
             }
         } catch (err){
             console.log(err)
