@@ -1,6 +1,22 @@
-// import prisma from '../../prisma/client'
-// // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import prisma from '../../prisma/client'
 
-// export default async function handler(req, res) {
-
-// }
+//POST api/create-report
+export default async function handler(req, res) {
+    //console.log(req.body)
+    //const {  } = req.body
+    
+    try {
+        if(req.method === 'POST'){
+            const result = await prisma.report.create({
+                data: {
+                    id: Number(id),
+                }
+            })
+            //console.log(result)
+            res.status(201).json(result)
+        }
+    } catch (err){
+        //console.log(err)
+        res.status(405).json({err})
+    }
+}
