@@ -11,8 +11,10 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-model Post {
+model Report {
   id          Int      @id @default(autoincrement())
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   status      String
@@ -21,12 +23,10 @@ model Post {
   category    String
   subCategory String
   description String?
-  author      User     @relation(fields: [authorId], references: [id])
-  authorId    Int
 
   @@index(authorId)
 }
-
+//don't need this table
 model Profile {
   id     Int     @id @default(autoincrement())
   bio    String?
@@ -40,6 +40,6 @@ model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
   name    String?
-  posts   Post[]
+  posts   Report[]
   profile Profile?
 }
