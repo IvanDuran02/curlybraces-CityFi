@@ -3,10 +3,10 @@ function TopReportsToggle() {
     <div className="top-reports-toggle">
       <div className="flex flex-col">
         <div className="flex justify-center w-screen">
-          <button className="mt-2 h-2 w-2/5 rounded-xl p-1 bg-[lightgrey]"></button>
+          <button className="mt-2 h-2 w-2/5 rounded-xl p-1 bg-[lightgrey] max-w-xs"></button>
         </div>
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-          <div className="grid grid-cols-3 items-center rounded-xl bg-white p-2 shadow-lg">
+        <div className="grid grid-cols-1 gap-2 md:flex justify-center items-center md:space-x-24">
+          <div className="grid grid-cols-3 rounded-xl bg-white p-2 shadow-lg max-w-xl">
             <div className="flex h-12 w-15 items-center justify-center">
               <img
                 className="w-14 h-16"
@@ -26,7 +26,7 @@ function TopReportsToggle() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 items-center rounded-xl bg-white p-2 shadow-lg">
+          <div className="grid grid-cols-3 items-center rounded-xl bg-white p-2 shadow-lg max-w-xl">
             <div className="flex h-12 w-15 items-center justify-center">
               <img
                 className="w-14 h-14"
