@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         //deleting a user by id
         } else if(req.method === 'DELETE'){
             //if you delete a user, you must delete their posts too
-            const deletePosts = prisma.report.deleteMany({
+            const deletePosts = await prisma.report.deleteMany({
                 where: {
                     authorId: Number(id)
                         }
@@ -28,13 +28,13 @@ export default async function handler(req, res) {
                     id: Number(id)
                 }
             })
-
-            const transaction = await prisma.$transaction([deletePosts, deleteUser])
-            console.log(deleteUser)
-            res.status(202).json(`user id #${result.id} has been successfully deleted`)
+            const transaction = prisma.$transaction([deletePosts, deleteUser])
+            res.status(202).json({ 
+                deleteUser, 
+                message: `user ${deleteUser.name} has been successfully deleted`
+            })
         }
     } catch (err){
-        console.log(err)
-        //res.status(405).json({err})
+        res.status(405).json({message: err})
     }
 }

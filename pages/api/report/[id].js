@@ -19,7 +19,6 @@ export default async function handler(req, res) {
                         id: Number(id)
                     }
                 })
-                console.log(result)
                 res.status(202).json(`report id #${result.id} has been successfully deleted`)
             }
         } catch (err){
