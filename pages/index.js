@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import AddReportButton from "../components/AddReportButton";
+import TopReportsToggle from "../components/TopReportsToggle";
+import Test from "./test";
+import MainNav from "../components/MainNav";
 
 function HomePage() {
   const googlemap = useRef(null);
@@ -41,12 +45,12 @@ function HomePage() {
     const locationSuccess = (position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      // const altitude = position.coords.altitude;
-      // const accuracy = position.coords.accuracy;
-      // const altitudeAccuracy = position.coords.altitudeAccuracy;
-      // const heading = position.coords.height;
-      // const speed = position.coords.speed;
-      // const timestamp = position.timestamp;
+      const altitude = position.coords.altitude;
+      const accuracy = position.coords.accuracy;
+      const altitudeAccuracy = position.coords.altitudeAccuracy;
+      const heading = position.coords.height;
+      const speed = position.coords.speed;
+      const timestamp = position.timestamp;
 
       setLat(latitude);
       setLng(longitude);
@@ -60,8 +64,11 @@ function HomePage() {
     navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
   });
   return (
-    <div className="h-[100vh] w-screen flex flex-col justify-center items-center">
-      <div id="map" ref={googlemap} />
+    <div className="h-[100vh] w-screen flex flex-col justify- items-center">
+      <AddReportButton />
+      <div id="map" ref={googlemap} className="w-[100%]" />
+      <TopReportsToggle />
+      <MainNav />
     </div>
   );
 }

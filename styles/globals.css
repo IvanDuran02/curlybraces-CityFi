@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --darkblue: #3b3554;
+  --navy: #187ba1;
+  --limegreen: #2ad876;
+  --orange: #ff9900;
+  --red: #e21717e5;
+}
+
 html,
 body {
   height: 100%;
@@ -14,4 +22,15 @@ body {
 }
 #__next {
   height: 100%;
+}
+
+.report-button {
+  color: var(--red);
+  z-index: 1;
+}
+
+.top-reports-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }

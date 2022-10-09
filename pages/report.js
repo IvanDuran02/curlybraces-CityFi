@@ -1,8 +1,15 @@
+import MainNav from "../components/MainNav"
 function Report() {
   return (
     <div>
-      <h1 className="heading">Report</h1>
-      <p>This is a paragraph</p>
+      <div className="flex justify-center">
+        <img src="#" alt="the taken photo"/>
+      </div>
+      <div>
+      <h2 className="underline flex justify-center">Photo information</h2>
+
+      </div>
+      <MainNav />
     </div>
   );
 }
