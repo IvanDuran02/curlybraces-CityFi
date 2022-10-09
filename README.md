@@ -16,7 +16,7 @@ yarn dev
 Finally we use Google Maps Platform to show users current location and to setup markers at set postions, issues or hazards etc...
 We didn't exactly manage to get our Authentication for user sign in setup in time although the endpoints are already done shown below.
 
-##Endpoints:
+## Endpoints:
 - GET: api/report/[id] 
 - GET: api/user/[id]
 - POST: api/report/create-report
