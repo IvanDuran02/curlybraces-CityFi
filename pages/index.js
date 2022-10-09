@@ -8,8 +8,8 @@ import MainNav from "../components/MainNav";
 function HomePage() {
   const googlemap = useRef(null);
 
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState(0.00);
+  const [lng, setLng] = useState(0.00);
 
   useEffect(() => {
     const loader = new Loader({
