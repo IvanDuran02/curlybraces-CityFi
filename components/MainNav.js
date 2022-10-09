@@ -7,9 +7,9 @@ function MainNav() {
         <nav className="fixed bottom-0 flex justify-evenly space-x-2 text-2xl pb-2">
                 <ul>
                     <li>
-                        <img>
+                        <img/>
                         <Link href='assets\issues.png'>Issues</Link>
-                        </img>
+                        
                     </li>
                 </ul>
                 <ul>
