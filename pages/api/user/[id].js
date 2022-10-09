@@ -1,11 +1,11 @@
 import prisma from '../../../prisma/client'
 
-//GET api/report/[id]
+//GET api/user/[id]
 export default async function handler(req, res) {
     const {id} = req.query
     if(req.method === 'GET'){
     //console.log(id)
-    const result = await prisma.report.findUnique({
+    const result = await prisma.user.findUnique({
         where: {
             id: Number(id)
         }
