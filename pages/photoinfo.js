@@ -72,7 +72,7 @@ const photoinfo = () => {
         <option value="2">Residential</option>
         <option value="3">Street</option>
     </select>
-    <img className="w-4 h-4 absolute right-20 bottom-[17rem]" src="/images/carrot.png" alt="carrot" />
+    <img className="w-4 h-4 absolute right-20 bottom-[17rem] hidden" src="/images/carrot.png" alt="carrot" />
   </div>
 </div>
 
