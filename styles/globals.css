@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("./typography.css");
 
 :root {
   --darkblue: #3b3554;
@@ -17,17 +16,13 @@ body {
   margin: 0;
   padding: 0;
 }
-
 #map {
-
   height: 80%;
-  width: 100%
-
+  width: 100%;
 }
 #__next {
   height: 100%;
 }
-
 
 .report-button {
   color: var(--red);
@@ -39,4 +34,3 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
 }
-
