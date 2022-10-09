@@ -2,7 +2,6 @@ import prisma from '../../../prisma/client'
 
 //POST api/report/create-report
 export default async function handler(req, res) {
-    console.log(req.body)
     const { 
             authorId, 
             status, 
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
     
     try {
         if(req.method === 'POST'){
-            const result = await prisma.report.create({
+            const newReport = await prisma.report.create({
                 data: {
                     authorId,
                     status,
@@ -26,7 +25,10 @@ export default async function handler(req, res) {
                     description
                 }
             })
-            res.status(201).json(result)
+            res.status(201).json({
+                newReport,
+                message: `Report# ${newReport.id} was successfully created!`
+            })
         }
     } catch (err){
         res.status(405).json({err})
