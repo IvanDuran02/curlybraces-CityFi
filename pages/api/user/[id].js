@@ -15,7 +15,8 @@ export default async function handler(req, res) {
             res.status(200).json(result)
 
         //deleting a user by id
-        } else if(req.method === 'DELETE'){
+        } 
+        if(req.method === 'DELETE'){
             //if you delete a user, you must delete their posts too
             const deletePosts = await prisma.report.deleteMany({
                 where: {
