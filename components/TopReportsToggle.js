@@ -10,7 +10,7 @@ function TopReportsToggle() {
           <div className="flex justify-center w-screen">
             <div
               onClick={() => setToggle(!toggle)}
-              className="mt-2 h-2 w-2/5 rounded-xl p-1 bg-[lightgrey] max-w-xs"
+              className="mt-2 h-2 w-2/5 rounded-xl m-4 bg-[lightgrey] max-w-xs"
             />
           </div>
         ) : (
@@ -18,11 +18,11 @@ function TopReportsToggle() {
             <div className="flex justify-center w-screen">
               <div
                 onClick={() => setToggle(!toggle)}
-                className="mt-2 h-2 w-2/5 rounded-xl p-1 bg-[lightgrey] max-w-xs"
+                className="mt-2 h-2 w-2/5 rounded-xl m-4 bg-[lightgrey] max-w-xs"
               />
             </div>
             <div className="grid grid-cols-1 gap-2 md:flex justify-center items-center md:space-x-24">
-              <div className="grid grid-cols-3 rounded-xl bg-white p-2 shadow-lg max-w-xl items-center md:p-4 md:m-4">
+              <div className="grid grid-cols-3 rounded-xl bg-white p-2 shadow-lg max-w-xl items-center md:p-4">
                 <div className="flex h-12 w-15 items-center justify-center">
                   <img
                     className="w-14 h-16"
@@ -62,10 +62,9 @@ function TopReportsToggle() {
                 </div>
               </div>
             </div>
+            <button className="font-bold">View More</button>
           </>
         )}
-
-        <button className="font-bold">View More</button>
       </div>
     </div>
   );
