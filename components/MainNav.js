@@ -5,7 +5,7 @@ function MainNav() {
     <div className="flex flex-col bottom-0">
       {/*Navigation bar*/}
       <nav>
-        <div className="flex justify-around items-center w-screen h-[10vh] pb-2">
+        <div className="flex justify-around items-center w-screen h-[10vh] pb-2 md:max-w-2xl">
           <Link href="#">
             <div className="icon_wrapper">
               <div>
