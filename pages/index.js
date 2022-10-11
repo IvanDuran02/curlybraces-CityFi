@@ -116,8 +116,8 @@ function HomePage() {
           </div>
 
           <div className="w-36 h-36 rounded-full bg-[#680E0E] absolute top-10 -left-20 opacity-80" />
-          <div className="w-36 h-36 rounded-full bg-[#2AD876] absolute -left-20 opacity-80" />
-          <div className="w-14 h-28 rounded-tl-full rounded-bl-full bg-[#187BA1] absolute top-52 left-[21rem] opacity-80" />
+          <div className="w-36 h-36 rounded-full bg-[#2AD876] absolute -left-20 bottom-20 opacity-80" />
+          <div className="w-14 h-28 rounded-tl-full rounded-bl-full bg-[#187BA1] absolute top-52 right-0 opacity-80" />
         </div>
       )}
     </>
