@@ -76,10 +76,10 @@ function HomePage() {
           <MainNav />
         </div>
       ) : (
-        <div className="overflow-hidden">
-          <div className="flex justify-center w-screen">
-            <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
             <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
+            <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
           </div>
           <div className="flex justify-center mt-20">
             <img src="/images/cityfi-icon.png" alt="cityfi icon" />

@@ -2,12 +2,12 @@ import Link from "next/link";
 
 function create() {
   return (
-    <div className="overflow-hidden">
-      <div className="flex justify-center w-screen">
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
         <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
         <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
       </div>
-      <div className="flexjustify-center mt-20">
+      <div className="md:w-[36rem]">
         <div className="flex justify-center mt-20">
           <p className="font-mono text-xl">Create Profile</p>
         </div>
