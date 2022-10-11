@@ -13,7 +13,6 @@ function HomePage() {
 
   const [loggedIn, setLoggedIn] = useState();
 
-
   useEffect(() => {
     const loader = new Loader({
       apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -72,7 +71,7 @@ function HomePage() {
       {loggedIn ? (
         <div className="h-[100vh] w-screen flex flex-col justify- items-center">
           <AddReportButton />
-          <div id="map" ref={googlemap} className="w-[100%]" />
+          <div id="map" ref={googlemap} className="w-[100%] grow" />
           <TopReportsToggle />
           <MainNav />
         </div>
