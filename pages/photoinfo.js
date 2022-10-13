@@ -109,7 +109,7 @@ const photoinfo = () => {
             type="button"
             className="bg-[#FF9900] text-white px-[4rem] py-2 md:py-4 rounded-lg font-semibold text-xl mt-2 w-screen max-w-[384px]"
             onClick={() => {
-              alert("Thanks for the Pic!");
+              alert("Thanks for reporting this Issue!");
             }}
           >
             Submit Photo
