@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 function MainNav() {
   return (
@@ -24,7 +27,7 @@ function MainNav() {
             </div>
           </Link>
           <Link href="#">
-            <div className="icon_wrapper">
+            <div onClick={() => signOut()} className="icon_wrapper">
               <div>
                 <img className="w-10 h-10" src="/images/account.png" />
               </div>
