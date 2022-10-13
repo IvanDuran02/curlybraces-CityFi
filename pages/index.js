@@ -76,7 +76,7 @@ function HomePage() {
           <AddReportButton />
           <div id="map" ref={googlemap} className="w-[100%] grow" />
           <TopReportsToggle />
-          <MainNav />
+          <MainNav className="z-50" />
         </div>
       </>
     );
