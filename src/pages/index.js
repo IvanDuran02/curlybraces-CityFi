@@ -69,65 +69,61 @@ function HomePage() {
 
     navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
   });
-  if (session) {
-    return (
-      <>
-        <div className="h-[100vh] w-screen flex flex-col justify- items-center">
-          <AddReportButton />
-          <div id="map" ref={googlemap} className="w-[100%] grow" />
-          <TopReportsToggle />
-          <MainNav />
-        </div>
-      </>
-    );
-  }
 
   return (
     <>
       <div id="map" ref={googlemap} className="w-[100%] hidden" />
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
-          <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
-          <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
+      {session ? (
+        <div className="h-[100vh] w-screen flex flex-col justify- items-center">
+          <AddReportButton />
+          <div id="map" ref={googlemap} className="w-[100%] grow" />
+          <TopReportsToggle />
+          <MainNav className="z-50" />
         </div>
-        <div className="flex justify-center mt-20">
-          <img src="/images/cityfi-icon.png" alt="cityfi icon" />
-        </div>
-        <div className="flex justify-center mt-16">
-          <p className="font-mono font-bold text-5xl">Cityfi</p>
-        </div>
-        <div className="flex mt-14 justify-center">
-          <p className="font-mono text-2xl text-center p-4">
-            Helping connect the community and <br /> the local goverment
-          </p>
-        </div>
-
-        <div className="flex space-x-8 w-screen justify-center">
-          <div className="flex justify-center mt-16">
-            <button
-              onClick={() => signIn()}
-              type="button"
-              className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2"
-            >
-              Sign In
-            </button>
+      ) : (
+        <div className="flex flex-col justify-center items-center max-h-[100vh]">
+          <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
+            <button className="mt-14 md:mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
+            <button className="mt-14 md:mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
           </div>
-          <Link href="/create">
-            <div className="flex justify-center mt-16">
+          <div className="flex justify-center mt-14 md:mt-20">
+            <img src="/images/cityfi-icon.png" alt="cityfi icon" />
+          </div>
+          <div className="flex justify-center mt-14 md:mt-16">
+            <p className="font-mono font-bold text-5xl">Cityfi</p>
+          </div>
+          <div className="flex mt-12 md:mt-16 justify-center">
+            <p className="text-2xl text-center p-4 font-mono opacity-60 -mt-8">
+              Helping connect the community and <br /> the local goverment
+            </p>
+          </div>
+          <div className="flex grow w-full h-48 md:h-4" />
+          <div className="flex space-x-8 w-screen justify-center">
+            <div className="mt-16">
               <button
+                onClick={() => signIn()}
                 type="button"
-                className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2"
+                className="bg-[#FF9900] text-white w-36 h-18 p-4 rounded-lg font-semibold text-xl hover:cursor-pointer hover:scale-110 transition-all mb-32 "
               >
-                Sign up
+                Sign In
               </button>
             </div>
-          </Link>
+            <Link href="/create">
+              <div className="mt-16">
+                <button
+                  type="button"
+                  className="bg-[#FF9900] w-36 h-18 text-white p-4 rounded-lg font-semibold text-xl hover:cursor-pointer hover:scale-110 transition-all mb-32"
+                >
+                  Sign up
+                </button>
+              </div>
+            </Link>
+          </div>
+          <div className="w-36 h-36 rounded-full bg-[#680E0E] absolute top-10 -left-20 opacity-80 -z-10" />
+          <div className="w-36 h-36 rounded-full bg-[#2AD876] absolute -left-20 bottom-20 opacity-80 -z-10" />
+          <div className="w-14 h-28 rounded-tl-full rounded-bl-full bg-[#187BA1] absolute top-52 right-0 opacity-80 -z-10" />
         </div>
-
-        <div className="w-36 h-36 rounded-full bg-[#680E0E] absolute top-10 -left-20 opacity-80" />
-        <div className="w-36 h-36 rounded-full bg-[#2AD876] absolute -left-20 bottom-20 opacity-80" />
-        <div className="w-14 h-28 rounded-tl-full rounded-bl-full bg-[#187BA1] absolute top-52 right-0 opacity-80" />
-      </div>
+      )}
     </>
   );
 }
