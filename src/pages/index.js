@@ -83,16 +83,16 @@ function HomePage() {
       ) : (
         <div className="flex flex-col justify-center items-center max-h-[100vh]">
           <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
-            <button className="mt-10 md:mt-18 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
-            <button className="mt-10 md:mt-18 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
+            <button className="mt-14 md:mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
+            <button className="mt-14 md:mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
           </div>
-          <div className="flex justify-center mt-10 md:mt-18">
+          <div className="flex justify-center mt-14 md:mt-20">
             <img src="/images/cityfi-icon.png" alt="cityfi icon" />
           </div>
-          <div className="flex justify-center mt-12 md:mt-14">
+          <div className="flex justify-center mt-14 md:mt-16">
             <p className="font-mono font-bold text-5xl">Cityfi</p>
           </div>
-          <div className="flex mt-10 md:mt-14 justify-center">
+          <div className="flex mt-12 md:mt-16 justify-center">
             <p className="text-2xl text-center p-4 font-mono opacity-60 -mt-8">
               Helping connect the community and <br /> the local goverment
             </p>

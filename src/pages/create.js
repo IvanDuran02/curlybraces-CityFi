@@ -4,8 +4,8 @@ function create() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
-        <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
-        <button className="mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
+        <button className="mt-14 md:mt-20 h-2 w-1/12 rounded-xl p-1 bg-[lightgrey]"></button>
+        <button className="mt-14 md:mt-20 h-2 w-1/12 rounded-xl p-1 bg-[grey]"></button>
       </div>
       <div className="md:w-[36rem]">
         <div className="flex justify-center mt-20">
@@ -38,7 +38,7 @@ function create() {
         <div className="flex justify-center mt-16">
           <button
             type="button"
-            className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2"
+            className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2 hover:cursor-pointer hover:scale-110 transition-all"
           >
             Confirm
           </button>
