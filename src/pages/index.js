@@ -100,13 +100,15 @@ function HomePage() {
           <div className="flex grow w-full h-48 md:h-4" />
           <div className="flex space-x-8 w-screen justify-center">
             <div className="mt-16">
-              <button
-                onClick={() => signIn()}
-                type="button"
-                className="bg-[#FF9900] text-white w-36 h-18 p-4 rounded-lg font-semibold text-xl hover:cursor-pointer hover:scale-110 transition-all mb-32 "
-              >
-                Sign In
-              </button>
+              <Link href="/signin">
+                <button
+                  // onClick={() => signIn()}
+                  type="button"
+                  className="bg-[#FF9900] text-white w-36 h-18 p-4 rounded-lg font-semibold text-xl hover:cursor-pointer hover:scale-110 transition-all mb-32 "
+                >
+                  Sign In
+                </button>
+              </Link>
             </div>
             <Link href="/create">
               <div className="mt-16">
