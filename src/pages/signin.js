@@ -35,7 +35,7 @@ const signin = ({ providers, csrfToken }) => {
         {Object.values(providers).map((provider) => (
           <div
             key={provider.name}
-            onClick={() => signIn(provider.id)}
+            onClick={() => signIn(provider.id, { callbackUrl: `/` })}
             className="flex justify-center items-center w-64 h-14 border-2 border-red-400 rounded-md text-black hover:text-white hover:bg-red-400 hover:scale-105 transition-all shadow-lg hover:cursor-pointer hover:text-opacity-100 text-opacity-50"
           >
             <img
