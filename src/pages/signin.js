@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn, getProviders } from "next-auth/react";
 
-const signin = () => {
+const signin = ({ providers, csrfToken }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="flex justify-center w-screen space-x-2 max-w-[36rem]">
@@ -31,17 +31,20 @@ const signin = () => {
           <span className="mx-4 opacity-60">or</span>
           <hr className="text-black w-28" />
         </div>
-        <div
-          onClick={() => signIn()}
-          className="flex justify-center items-center w-64 h-14 border-2 border-red-400 rounded-md text-black hover:text-white hover:bg-red-400 hover:scale-105 hover:transition-all shadow-lg hover:cursor-pointer hover:text-opacity-100 text-opacity-50"
-        >
-          <img
-            src="/images/googleIcon.png"
-            alt="Google Icon"
-            className="w-10 h-10 p-2 -ml-4"
-          />
-          <h1 className="font-semibold">Sign In With Google</h1>
-        </div>
+        {Object.values(providers).map((provider) => (
+          <div
+            key={provider.name}
+            onClick={() => signIn(provider.id)}
+            className="flex justify-center items-center w-64 h-14 border-2 border-red-400 rounded-md text-black hover:text-white hover:bg-red-400 hover:scale-105 hover:transition-all shadow-lg hover:cursor-pointer hover:text-opacity-100 text-opacity-50"
+          >
+            <img
+              src="/images/googleIcon.png"
+              alt="Google Icon"
+              className="w-10 h-10 p-2 -ml-4"
+            />
+            <h1 className="font-semibold">Sign in with {provider.name}</h1>
+          </div>
+        ))}
       </div>
 
       <div className="flex justify-center mt-16">
@@ -59,5 +62,12 @@ const signin = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const providers = await getProviders();
+  return {
+    props: { providers },
+  };
+}
 
 export default signin;
