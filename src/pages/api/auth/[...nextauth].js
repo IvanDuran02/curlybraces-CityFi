@@ -1,15 +1,16 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 export const authOptions = {
-  // Configure one or more authentication providers
-  callbacks: {
-    async redirect(url, baseUrl) {
-      return "https://google.com";
-    },
-  },
+  // create callbacks for successful sign ins
+  // callbacks: {
+  //   async redirect(url, baseUrl) {
+  //     return "https://google.com";
+  //   },
+  // },
   pages: {
     signIn: "/signin",
   },
+  // Configure one or more authentication providers
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
