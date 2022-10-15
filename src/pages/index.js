@@ -74,7 +74,7 @@ function HomePage() {
     <>
       <div id="map" ref={googlemap} className="w-[100%] hidden" />
       {session ? (
-        <div className="h-[100vh] w-screen flex flex-col justify- items-center">
+        <div className="h-[100vh] w-screen flex flex-col justify- items-center overflow-hidden">
           <AddReportButton />
           <div id="map" ref={googlemap} className="w-[100%] grow" />
           <TopReportsToggle />
