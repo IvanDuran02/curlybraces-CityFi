@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { signIn, getProviders } from "next-auth/react";
+import Link from "next/link";
 
 const signin = ({ providers, csrfToken }) => {
   return (
@@ -47,13 +48,16 @@ const signin = ({ providers, csrfToken }) => {
         ))}
       </div>
 
-      <div className="flex justify-center mt-16">
-        <button
-          type="button"
-          className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2 hover:cursor-pointer hover:scale-105 transition-all shadow-lg"
-        >
-          Confirm
-        </button>
+      <div className="flex flex-col items-center justify-center mt-16">
+        <Link href="/create">
+          <button
+            type="button"
+            className="bg-[#FF9900] text-white px-[4rem] py-2 rounded-lg font-semibold text-xl mt-2 hover:cursor-pointer hover:scale-105 transition-all shadow-lg"
+          >
+            Sign Up
+          </button>
+        </Link>
+        <p className="opacity-50 mt-2 p-1">{"Don't have an account?"}</p>
       </div>
 
       <div className="w-36 h-36 rounded-full bg-[#680E0E] absolute top-10 -left-20 opacity-80" />
